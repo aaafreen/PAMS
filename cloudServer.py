@@ -55,7 +55,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
                 data = parse.parse_qs(rfile_str, keep_blank_values=1)
                 card_uid = self.path.split('/')[-1]
                 LocalData.cards[card_uid] = data
-                print("Minted NFT at blockNumber %s: %s" % (record_id, data))
+                print("Registered NFT card %s: %s" % (card_uid, data))
                 # HTTP 200: ok
                 self.send_response(200)
             else:
